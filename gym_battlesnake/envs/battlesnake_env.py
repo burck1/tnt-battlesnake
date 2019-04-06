@@ -35,7 +35,7 @@ class BattlesnakeEnv(MultiAgentEnv):
             low=0,
             high=255,
             shape=(self.width, self.height, self.stacked_frames),
-            dtype=np.uint8,
+            # dtype=np.uint8,
         )
         if num_snakes == 1:
             self.observation_space = self.obs_space

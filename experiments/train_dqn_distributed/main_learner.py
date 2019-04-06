@@ -7,15 +7,15 @@ from tensorboardX import SummaryWriter
 
 from dqn.make_agent import make_agent
 from dqn.distributed import DQNLearner
-from gym_battlesnake.wrappers import FrameStack
+# from gym_battlesnake.wrappers import FrameStack
 
 
 def main_learner(run_id, config):
     environments = []
     for _ in range(config.num_envs):
         environment = gym.make(config.env)
-        if config.frame_stack > 1:
-            environment = FrameStack(environment, num_stacked_frames=config.frame_stack)
+        # if config.frame_stack > 1:
+        #     environment = FrameStack(environment, num_stacked_frames=config.frame_stack)
         environments.append(environment)
 
     input_shape = environments[0].observation_space.shape
